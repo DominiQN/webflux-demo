@@ -1,4 +1,4 @@
-package dominqn.webflux.demo
+package dominiqn.webflux.demo
 
 import org.springframework.stereotype.Repository
 import java.util.*

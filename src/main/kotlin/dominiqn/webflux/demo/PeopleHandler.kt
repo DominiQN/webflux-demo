@@ -1,4 +1,4 @@
-package dominqn.webflux.demo
+package dominiqn.webflux.demo
 
 import kotlinx.coroutines.flow.asFlow
 import org.springframework.http.MediaType.APPLICATION_JSON

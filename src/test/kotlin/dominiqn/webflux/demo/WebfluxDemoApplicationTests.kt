@@ -1,4 +1,4 @@
-package dominqn.webflux.demo
+package dominiqn.webflux.demo
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
