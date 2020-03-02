@@ -5,7 +5,7 @@ server:
   port: 8080
 logging:
   level:
-    com.htbeyond: DEBUG
+    dominiqn: DEBUG
     reactor.core: TRACE
     reactor.util: TRACE
     org.springframework.data: TRACE
