@@ -1,20 +1,12 @@
 package dominiqn.webflux.demo
 
-import org.springframework.stereotype.Repository
-import java.util.*
+import org.springframework.data.r2dbc.repository.Query
+import org.springframework.data.repository.reactive.ReactiveCrudRepository
+import reactor.core.publisher.Flux
 
-@Repository
-class PeopleRepository {
-    private val database: MutableMap<UUID, Person> = mutableMapOf(
-        Person("Adam").let { it.id to it }
-    )
+interface PeopleRepository : ReactiveCrudRepository<People, Long> {
 
-    fun save(person: Person): Person {
-        database[person.id] = person
-        return person
-    }
+    @Query("select * from people p where name like concat('%', :name, '%')")
+    fun findByNameLike(name: String): Flux<People>
 
-    fun findById(id: UUID) = database[id]
-
-    fun findAll() = database.values.toList()
 }
