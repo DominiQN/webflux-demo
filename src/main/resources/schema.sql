@@ -5,4 +5,4 @@ create table people (
     name varchar(50) not null
 );
 
-insert into people (name) values ('Adam'), ('Eden');
+insert into people (name) values ('Adam'), ('Eve');
