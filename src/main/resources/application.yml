@@ -1,15 +1,11 @@
 spring:
+  application:
+    name: webflux-demo
   profiles:
-    active: dev
+    include: logging
   r2dbc:
     url: r2dbc:h2:mem://eden?options=DB_CLOSE_DELAY=-1;
     username: god
 
 server:
   port: 8080
-logging:
-  level:
-    dominiqn: DEBUG
-    reactor.core: TRACE
-    reactor.util: TRACE
-    org.springframework.data: TRACE

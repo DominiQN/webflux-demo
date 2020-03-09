@@ -1,0 +1,12 @@
+spring:
+  # if you want to check masked parameters, set the following property. `spring.http.log-request-details: true`
+  # if you want to hide parameters, remove or comment out below property
+  http:
+    log-request-details: true
+logging:
+  level:
+    dominiqn.webflux.demo: DEBUG
+    web: DEBUG
+    org.springframework.data: DEBUG
+    reactor.core: DEBUG
+    reactor.util: DEBUG
