@@ -1,8 +1,6 @@
 package dominiqn.webflux.demo
 
 import dominiqn.webflux.demo.util.LoggerCompanion
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.reactive.asFlow
 import org.springframework.stereotype.Service
 import reactor.core.publisher.Flux
 
