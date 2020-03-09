@@ -1,6 +1,7 @@
 package dominiqn.webflux.demo
 
 import dominiqn.webflux.demo.util.orElseNull
+import kotlinx.coroutines.reactive.asFlow
 import kotlinx.coroutines.reactive.awaitFirstOrNull
 import org.springframework.http.MediaType.APPLICATION_JSON
 import org.springframework.stereotype.Component
@@ -19,6 +20,7 @@ class PeopleHandler(
         return request.awaitBody<People>()
             .validate()
             .let { service.createPerson(it) }
+            .asFlow()
             .let { ok().contentType(APPLICATION_JSON).bodyAndAwait(it) }
     }
 
@@ -34,6 +36,7 @@ class PeopleHandler(
         return request.queryParam("name")
             .orElseNull()
             .let { service.listPerson(it) }
+            .asFlow()
             .let { ok().contentType(APPLICATION_JSON).bodyAndAwait(it) }
     }
 
